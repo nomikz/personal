@@ -1,8 +1,7 @@
 <template>
     <div>
-        <main-header></main-header>
-        <div id="main">
 
+        <main class="main">
 
             <section class="intro-section">
 
@@ -29,11 +28,9 @@
             </section>
 
 
+            <section id="about" class="about-section">
 
-
-            <section class="about-section">
-
-                <h2 class="section-heading about-section__heading">
+                <h2 class="section-heading section-heading--about">
                     About me
                 </h2>
 
@@ -57,7 +54,7 @@
                             Here are a few technologies I've been working with recently:
                         </p>
 
-                        <div class="about-section__skill-box">
+                        <div class="about-section__ul-box">
 
                             <ul>
                                 <li>
@@ -94,11 +91,9 @@
             </section>
 
 
+            <section id="experience" class="experience-section">
 
-
-            <section class="experience-section">
-
-                <h2 class="section-heading experience-section__heading">
+                <h2 class="section-heading section-heading--experience">
                     Where I've Worked
                 </h2>
 
@@ -107,24 +102,22 @@
             </section>
 
 
+            <section id="portfolio" class="portfolio-section">
 
-
-            <section class="portfolio-section">
-
-                <h2 class="section-heading portfolio-section__heading">
+                <h2 class="section-heading section-heading--portfolio">
                     Some things I've built
                 </h2>
 
                 <!--first-->
                 <div class="portfolio-item">
 
-                    <div class="portfolio-item__image">
+                    <div class="portfolio-item__image-box">
                         <div class="wip-image-wrapper">
                             <a
                                 href="#"
                             >
                                 <img
-                                    class="image"
+                                    class="portfolio-item__image"
                                     src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
                                 >
                             </a>
@@ -160,13 +153,13 @@
                 <!--second-->
                 <div class="portfolio-item portfolio-item--reverse">
 
-                    <div class="portfolio-item__image">
+                    <div class="portfolio-item__image-box">
                         <div class="wip-image-wrapper">
                             <a
                                 href="#"
                             >
                                 <img
-                                    class="image"
+                                    class="portfolio-item__image"
                                     src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
                                 >
                             </a>
@@ -200,8 +193,10 @@
                 </div>
             </section>
 
-            <section class="contact-section">
-                <h2 class="section-heading contact-section__heading">
+
+
+            <section id="contact" class="contact-section">
+                <h2 class="section-heading section-heading--contact">
                     Get in touch
                 </h2>
                 <p class="contact-section__text">
@@ -211,17 +206,9 @@
                     Say hello
                 </button>
             </section>
-        </div>
-
-        <footer class="footer">
-            <div class="footer__text">
-                <p>Built by Bekarysuly Namazbek.</p>
-                <p>
-                    Design inspiration <a class="underlined" href="https://brittanychiang.com/">Brittany Chiang</a>
-                </p>
-            </div>
-        </footer>
+        </main>
     </div>
+
 </template>
 
 <script>
@@ -246,7 +233,7 @@ export default {
     name: 'list',
     head() {
         return {
-            title: "Events",
+            title: "nomikz",
             meta: [
                 {
                     hid: 'description',

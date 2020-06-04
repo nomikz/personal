@@ -11,6 +11,19 @@ $dark-primary-color: #9a6ab3;
 
 @import 'animations.scss';
 
+@import "base/animations"; // animations.scss to animations
+@import "base/typography";
+@import "base/base";
+@import "base/utilities";
+
+@import "layout/header";
+@import "layout/footer";
+
+
+@import "components/button";
+@import "components/portfolio-item";
+
+@import "pages/resume";
 
 
 
@@ -22,146 +35,30 @@ $dark-primary-color: #9a6ab3;
 
 
 
-// css reset
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: "SF Mono";
-    src:
-        url(~assets/fonts/sf-mono/SFMonoMedium.otf) format("opentype"),
-}
 
 
 
 
-//body styles
-body {
-    background-color: $dark-background-color;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
-    font-size: 18px;
-    color: $dark-font-color;
-}
-
-
-
-// ul defaults taken out
-ul {
-    list-style: none;
-}
 
 
 
 
-// utility ul li
-ul.inline-ul li {
-    display: inline-block;
-    margin: 0 10px;
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1200px) {
 
 }
 
 
 
-
-// utility link coloring
-a {
-    text-decoration: none;
-    color: $dark-font-color;
-}
-
-
-// link utility
- a.underlined {
-    color: $dark-primary-color;
-    display: inline-block;
-}
-
- a.underlined:after {
-    display: block;
-    content: '';
-    border-bottom: solid 1px $dark-primary-color;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-    transform-origin:  0 50%;
-}
-
- a.underlined:hover:after {
-    transform: scaleX(1);
-    transform-origin:  0 50%;
-}
-
-
-
-
-
-
-
-
-
-// button
-.primary-button {
-    background-color: transparent;
-    color: $dark-primary-color;
-    border: 1px solid $dark-primary-color;
-    border-radius: 3px;
-}
-
-.primary-button:hover {
-    background-color: rgba($dark-primary-color, 0.22);
-}
-
-
-
-
-
-//header navigation
-.header {
-    z-index: 20;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 0 50px;
-    height: 100px;
-    background-color: $dark-background-color;
-    transform: translateY(0%);
-    transition: height 0.3s, transform 0.3s;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-
-
-    &__logo {
-        height: 40px;
-        width: 40px;
-    }
-
-    &__nav {
-        span {
-            font-size: 12px;
-            font-family: SF Mono, monospace;
-            color: $dark-primary-color;
-        }
-
-        a {
-            font-size: 13px;
-            padding: 12px 10px;
-        }
-        a:hover {
-            color: $dark-primary-color;
-        }
-
-        button {
-            font-size: 13px;
-            padding: 10px 13px;
-        }
-    }
-
+@media only screen and (min-width: 992px) {
 
 }
 
@@ -169,371 +66,21 @@ a {
 
 
 
-#main {
-    max-width: 1600px;
-    padding-right: 150px;
-    padding-left: 150px;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-// h2 of each section
-.section-heading {
-    display: flex;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 45px;
-}
-
-.section-heading::before {
-    font-family: SF Mono, monospace;
-    color: $dark-primary-color;
-    margin-right: 10px;
-    font-size: 20px;
-    position: relative;
-    bottom: -1px;
+@media only screen and (min-width: 768px) {
 
 }
-.section-heading::after {
-    content: '';
-    margin-left: 20px;
-    display: block;
-    background-color: rgba(255, 255, 255, 0.44);
-    height: 1px;
-    width: 300px;
-    position: relative;
-    bottom: -1px;
-}
 
 
-
-section {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-// section intro layout
-.intro-section {
-    padding: 150px 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
-}
-.about-section {
-    padding: 150px 0;
-}
-.experience-section {
-    padding: 150px 0;
-    max-width: 700px; // overwrite parent
-}
-.portfolio-section {
-    padding: 150px 0;
-}
-
-
-
-
-// refactor
-.intro-section {
-    &__hello {
-        color: $dark-primary-color;
-        margin: 0 0 10px 3px;
-    }
-
-    &__specialization {
-        line-height: 1.2;
-        font-size: 75px;
-        font-weight: 500;
-    }
-
-    h1 {
-        font-size: 75px;
-        line-height: 1.2;
-        font-weight: 500;
-        color: lighten($dark-font-color, 20%);
-    }
-
-    &__info {
-        margin-top: 35px;
-        width: 500px;
-    }
-
-    &__contact-me {
-        font-size: 14px;
-        margin-top: 50px;
-        padding: 20px 28px;
-    }
-}
-
-
-
-
-
-.about-section { // about section
-    &__heading::before {
-        content: '01.';
-    }
-
-    &__flexbox {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    &__text-box {
-        max-width: 480px;
-
-        p {
-            margin-bottom: 15px;
-        }
-    }
-
-    &__skill-box {
-        display: flex;
-    }
-    &__skill-box > * {
-        width: 30%;
-    }
-
-
-    &__image-box {
-
-        max-width: 300px;
-        max-height: 376px;
-        position: relative;
-
-
-        &:hover::before {
-            transform: translate(4%, 4%)  scale(1);
-        }
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid rgba($dark-primary-color, 0.93);
-            transform: translate(5%, 5%) scale(1);
-            transition: all 0.3s;
-        }
-
-
-
-        .image {
-            max-width: 300px;
-            max-height: 376px;
-            background: url("https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg");
-            background-size: contain;
-            //filter: opacity(0.5) drop-shadow(0 0 0 rgba(47, 7, 42, 0.81));
-            filter: brightness(69%) grayscale(20%);
-            transition: all 0.3s;
-
-
-        }
-
-
-
-
-        .image:hover {
-            //filter: opacity(1) drop-shadow(0 0 0 rgba(47, 7, 42, 0.81));
-            filter: brightness(100%)  grayscale(0%);
-            transform: translate(1%, 1%);
-            transition: all 0.3s;
-
-        }
-
-
-    }
-
-
+@media only screen and (min-width: 640px) {
 
 }
 
 
 
-
-
-.experience-section {
-    &__heading::before {
-        content: '02.';
-    }
+@media only screen and (max-width: 640px) {
 }
 
 
-.portfolio-section {
-
-    &__heading::before {
-        content: '03.';
-    }
-}
-
-
-.portfolio-item {
-    display: flex;
-    width: 1000px;
-    align-items: center;
-    margin-bottom: 100px;
-
-
-    &__image {
-        height: 360px;
-        position: relative;
-        width: 570px;
-
-        .wip-image-wrapper {
-            position: relative;
-        }
-
-        .image {
-            position: absolute;
-
-            //image dimensions
-            height: 360px;
-            width: 570px;
-            background-size: cover;
-            background-position: center;
-            filter: opacity(.5) drop-shadow(0 0 0 rgba(47, 7, 42, 0.81));
-
-            transition: all 0.3s;}
-
-        .image:hover {
-            filter: opacity(1);
-            transition: all 0.3s;
-        }
-    }
-
-
-    &__info-box {
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-    }
-
-    &__featured {
-        font-family: 'SF Mono', sans-serif;
-        font-size: 13px;
-        color: $dark-primary-color;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    &__link {
-        margin-bottom: 20px;
-        font-size: 28px;
-        letter-spacing: 1px;
-        font-weight: 600;
-        transition: all 0.3s;
-    }
-
-    &__link:hover {
-        color: $dark-primary-color;
-    }
-
-
-    &__description {
-        padding: 25px;
-        border-radius: 3px;
-        z-index: 3;
-        font-size: 15px;
-        background-color: $dark-secondary-background-color;
-    }
-
-    &__list {
-        margin: 25px 0 10px;
-        font-family: 'SF Mono', sans-serif;
-        font-size: 13px;
-    }
-
-}
-
-
-
-.portfolio-item--reverse {
-    flex-direction: row-reverse;
-
-    .portfolio-item__image {
-        .image {
-            right: 0;
-        }
-    }
-
-    .portfolio-item__info-box {
-        align-items: flex-start;
-    }
-
-    .portfolio-item__description {
-        z-index: 3;
-    }
-}
-
-
-
-
-
-
-
-
-.contact-section {
-    padding: 150px 0;
-    max-width: 600px;
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .section-heading {
-        flex-direction: column;
-        font-size: 60px;
-        margin-bottom: 45px;
-    }
-
-    .section-heading::before {
-        content: "04 What's Next?";
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-size: 14px;
-
-    }
-    .section-heading::after {
-        margin-left: 0px;
-        height: 0px;
-        width: 0px;
-    }
-
-    .primary-button {
-        margin-top: 50px;
-        padding: 20px 28px;
-    }
-
-    &__text {
-        text-align: center;
-    }
-}
-
-.footer {
-    padding: 15px;
-
-    &__text  {
-        font-size: 12px;
-        font-family: "SF Mono", sans-serif;
-        text-align: center;
-    }
-}
 
 
 

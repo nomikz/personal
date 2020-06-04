@@ -2,51 +2,35 @@
 
     <header
         class="header"
-        :class="{
-                'decreased': lastScrollPosition > 90,
-
-            }"
+        :class="{'decreased': isHeaderDecreased}"
     >
-        <img class="header__logo" src="https://raw.githubusercontent.com/Gherciu/gatsby-all-in/master/static/logo.png" alt="">
+
+        <div class="header__logo-box" @mouseenter="animateLogo">
+            <img
+                :class="animationClass"
+                class="header__logo"
+                src="~assets/images/logo.png"
+            >
+        </div>
+
         <nav class="header__nav">
             <ul class="inline-ul">
-                <li>
-                    <span>01.</span>
+                <li v-for="(link, index) in menuLinks" :key="index">
+                    <span
+                        class="header__link-counter"
+                        v-text="getLinkCounter(index)"
+                    ></span>
                     <nuxt-link
-                        to="#"
-                    >
-                        About
-                    </nuxt-link>
+                        class="header__link"
+                        :to="link.href"
+                        v-text="link.text"
+                    ></nuxt-link>
                 </li>
-                <li>
-                    <span>02.</span>
-                    <nuxt-link
-                        to="#"
-                    >
-                        Experience
-                    </nuxt-link>
-                </li>
-                <li>
-                    <span>03.</span>
-                    <nuxt-link
-                        to="#"
-                    >
-                        Work
-                    </nuxt-link>
-                </li>
-                <li>
-                    <span>04.</span>
 
-                    <nuxt-link
-                        to="#"
-                    >
-                        Contact
-                    </nuxt-link>
-                </li>
                 <li>
                     <nuxt-link
                         tag="button"
-                        class="primary-button"
+                        class="header__cta primary-button"
                         to="#"
                     >
                         Resume
@@ -61,35 +45,82 @@
 <script>
     export default {
         name: 'MainHeader',
-        data() {
-            return {
-                lastScrollPosition: 0,
-            }
-        },
         mounted () {
             window.addEventListener('scroll', this.onScroll);
+
+            setInterval(() => {
+                this.animateLogo();
+            }, 6000);
         },
         beforeDestroy () {
             window.removeEventListener('scroll', this.onScroll)
         },
-        methods: {
-            onScroll() {
-                this.lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            },
-        },
+        data() {
+            return {
+                menuLinks: [
+                    {
+                        href: '',
+                        text: 'About',
+                    },
+                    {
+                        href: '',
+                        text: 'Experience',
+                    },
+                    {
+                        href: '',
+                        text: 'Work',
+                    },
+                    {
+                        href: '',
+                        text: 'Contact',
+                    },
+                ],
 
+                scrollPosition: 0,
+                isAnimating: false,
+            }
+        },
+        methods: {
+            getLinkCounter(index) {
+                index++;
+                return '0' + index + '.';
+            },
+            onScroll() {
+                this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            },
+            animateLogo() {
+                this.isAnimating = true;
+
+                setTimeout(() => {
+                    this.isAnimating = false;
+                },1250);
+            }
+        },
+        computed: {
+            animationClass() {
+                const classesArr = [
+                    'rotate-left',
+                    'rotate-right'
+                ];
+                const arrIndex = () => Math.floor(Math.random() * 2);
+                return this.isAnimating ? classesArr[arrIndex()] : '';
+            },
+            isHeaderDecreased() {
+                return this.scrollPosition > 90
+            }
+        }
     }
 </script>
 
-<style>
+<style scoped lang="scss">
     .decreased {
         height: 70px;
         border-bottom: 1px solid #232129;
         box-shadow: rgba(0, 0, 0, 0.97) 0px 10px 30px -10px;
     }
 
-    .scrolling-down {
-        transform: translateY(-150px);
-    }
+    //.scrolling-down {
+    //    transform: translateY(-150px);
+    //}
 
 </style>

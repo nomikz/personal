@@ -9,11 +9,49 @@
     }
 }
 
-.header__logo {
+.header__logo-box {
     opacity: 0;
     animation-name: opacityGrow;
-    animation-duration: 1.4s;
-    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.55,.2,.32,.78);
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes rotateLeft {
+    0% {
+        transform: rotate(0deg); ;
+    }
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+@keyframes rotateRight {
+    0% {
+        //transform: rotate(0deg); ;
+    }
+    100% {
+        transform: rotate(1turn); ;
+    }
+}
+
+
+.rotate-right {
+    animation-name: rotateRight;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.rotate-left {
+    animation-name: rotateLeft;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
 }
