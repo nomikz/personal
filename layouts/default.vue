@@ -1,14 +1,19 @@
 <template>
-    <div id="app">
+    <div id="app" :class="getThemeClass">
+        <div class="wrapper">
 
-        <main-header />
+            <main-header
+                @themeSwitched="isLightMode = !isLightMode"
+                :isLightMode="isLightMode"
+            ></main-header>
 
-        <nuxt/>
+            <nuxt/>
 
-        <main-footer />
+            <main-footer />
 
-        <social-links />
-        <telegram-link />
+            <social-links />
+            <telegram-link />
+        </div>
     </div>
 </template>
 
@@ -19,6 +24,20 @@ import SocialLinks from '~/components/SocialLinks';
 import TelegramLink from '~/components/TelegramLink';
 
 export default {
+    mounted() {
+    },
+    methods: {
+    },
+    computed: {
+        getThemeClass() {
+            return this.isLightMode ? 'theme-light' : 'theme-dark';
+        }
+    },
+    data() {
+        return {
+            isLightMode: false,
+        }
+    },
     head() {
         return {
             titleTemplate: "%s - Blog",

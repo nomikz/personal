@@ -1,0 +1,75 @@
+.socials{
+
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tablet-landscape) {
+        left: 20px;
+    }
+
+    @include respond(tablet-portrait) {
+
+    }
+
+    @include respond(phone) {
+        flex-direction: row;
+        justify-content: center;
+
+        width: 100%;
+        position: static;
+        bottom: 30px;
+        left: 0;
+    }
+
+
+
+    &__link {
+        margin-bottom: 30px;
+        font-size: 25px;
+        line-height: 1;
+        color: $dark-font-color;
+        display: inline-block;
+        transition: all 0.25s;
+
+        @include respond(phone) {
+        margin: 10px 10px 30px 10px;
+        }
+
+
+        @include themify($themes) {
+            color: themed('textColor')
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            @include themify($themes) {
+                color: themed('primaryColor')
+            }
+        }
+    }
+
+
+
+
+
+
+    .line-box {
+        content: '';
+        height: 90px;
+        width: 1px;
+
+        @include themify($themes) {
+            background-color: themed('textColor')
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
+
+    }
+
+}

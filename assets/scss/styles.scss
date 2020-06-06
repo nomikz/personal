@@ -3,11 +3,11 @@
 //@import 'elements/body';
 //@import 'components/util';
 @import "abstracts/variables";
-
+@import "abstracts/functions";
 @import "abstracts/mixins";
 
 
-@import "base/animations"; // animations.scss to animations
+@import "base/animations";
 @import "base/typography";
 @import "base/base";
 @import "base/utilities";
@@ -19,6 +19,9 @@
 @import "components/button";
 @import "components/portfolio-item";
 @import "components/tabs";
+
+@import "components/social-links";
+@import "components/telegram-link";
 
 @import "pages/resume";
 

@@ -36,6 +36,19 @@
                         Resume
                     </nuxt-link>
                 </li>
+                <li>
+                    <div class="switcher">
+
+                        <div
+                            @click="$emit('themeSwitched')"
+                            class="switcher__item mdi"
+                            :class="switcherClass"
+                        ></div>
+
+
+                    </div>
+                </li>
+
             </ul>
         </nav>
     </header>
@@ -45,8 +58,15 @@
 <script>
     export default {
         name: 'MainHeader',
+        props: {
+            isLightMode: {
+                type: Boolean,
+                default: false
+            }
+        },
         mounted () {
             window.addEventListener('scroll', this.onScroll);
+
 
             setInterval(() => {
                 this.animateLogo();
@@ -57,6 +77,8 @@
         },
         data() {
             return {
+                lightThemeClassString: 'switcher__item--light mdi-white-balance-sunny',
+                darkThemeClassString: 'switcher__item--dark mdi-weather-night',
                 menuLinks: [
                     {
                         href: '',
@@ -97,6 +119,9 @@
             }
         },
         computed: {
+            switcherClass() {
+                return this.isLightMode ? this.lightThemeClassString : this.darkThemeClassString;
+            },
             animationClass() {
                 const classesArr = [
                     'rotate-left',
@@ -118,6 +143,13 @@
         border-bottom: 1px solid #232129;
         box-shadow: rgba(0, 0, 0, 0.97) 0px 10px 30px -10px;
     }
+
+
+    .theme-light .header.decreased {
+        border-bottom: 1px solid #f0f0f2;
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 10px 30px -10px;
+    }
+
 
     //.scrolling-down {
     //    transform: translateY(-150px);

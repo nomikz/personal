@@ -12,9 +12,15 @@ body {
 
 
 
-body {
-    background-color: $dark-background-color;
-}
+// under theme control
+
+//body {
+//
+//
+//    @include themify($themes) {
+//        background-color: themed('backgroundColor');
+//    }
+//}
 
 
 html {
@@ -68,7 +74,9 @@ ul {
 // utility link coloring
 a {
     text-decoration: none;
-    color: $dark-font-color;
+    @include themify($themes) {
+        color: themed('textColor');
+    }
 }
 
 

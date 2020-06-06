@@ -5,12 +5,18 @@
 .primary-button {
     font-family: 'SF Mono', sans-serif;
     background-color: transparent;
-    color: $dark-primary-color;
-    border: 1px solid $dark-primary-color;
+
+    @include themify($themes) {
+        color: themed('primaryColor');
+        border: 1px solid themed('primaryColor');
+    }
     border-radius: 3px;
 
     &:hover {
-        background-color: rgba($dark-primary-color, 0.22);
+        @include themify($themes) {
+            background-color: rgba(themed('primaryColor'), 0.2);
+        }
+
     }
 }
 

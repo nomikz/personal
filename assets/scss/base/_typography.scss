@@ -12,13 +12,25 @@
 
 
 
+
+
 //body styles
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     font-size: 16px;
-    color: $dark-font-color;
+    font-weight: 300;
 
+
+
+}
+
+.wrapper { //todo
+    // under theme control
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('backgroundColor');
+    }
 }
 
 
@@ -81,6 +93,10 @@ body {
         position: relative;
         bottom: -1px;
         font-weight: 400;
+
+        @include themify($themes) {
+            color: themed('primaryColor');
+        }
     }
 
     &--about:before {

@@ -1,5 +1,7 @@
 
 
+
+
 .portfolio-item {
     max-width: 1000px;
     display: flex;
@@ -96,8 +98,12 @@
     &__featured {
         font-family: 'SF Mono', sans-serif;
         font-size: 13px;
-        color: $dark-primary-color;
         margin: 10px 0;
+
+        @include themify($themes) {
+            color: themed('primaryColor');
+        }
+
         @include respond(phone) {
             margin: 5px 0;
         }
@@ -115,17 +121,22 @@
         }
 
         &:hover {
-            color: $dark-primary-color;
-
+            @include themify($themes) {
+                 color: themed('primaryColor');
+             }
         }
     }
-
 
     &__description {
         padding: 25px;
         border-radius: 3px;
         font-size: 15px;
-        background-color: $dark-secondary-background-color;
+        @include themify($themes) {
+            background-color: themed('secondaryBackgroundColor')
+        }
+
+
+
 
         @include respond(phone) {
             padding: 10px 22px;

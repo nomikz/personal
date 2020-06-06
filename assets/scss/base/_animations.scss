@@ -1,5 +1,11 @@
 
 
+@keyframes themeSwitch {
+    50% {
+        transform: translateX(150px);
+    }
+}
+
 @keyframes opacityGrow {
     0% {
         opacity: 0;
