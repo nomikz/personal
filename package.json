@@ -10,15 +10,14 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "heroku-postbild": "npm run build"
-
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "nuxt": "^2.0.0"
+    "@nuxtjs/axios": "^5.11.0",
+    "nuxt": "^2.0.0",
+    "nuxtjs-mdi-font": "^1.0.2"
   },
   "devDependencies": {
     "@mdi/font": "^5.3.45",
-    "@nuxtjs/vuetify": "^1.11.2",
     "css-loader": "^3.5.3",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2"

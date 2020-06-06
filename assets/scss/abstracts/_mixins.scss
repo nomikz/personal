@@ -5,3 +5,54 @@
     clear: both;
   }
 }
+
+
+
+//@mixin respond-phone {
+//    @media (max-width: 640px) { @content };
+//}
+
+
+/*
+
+base + typography -> general layout + grid -> page layout -> component
+
+phone
+tablet-portrait
+tablet-landscape
+desktop // already
+*/
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 1200px) { @content };
+    }
+
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 992px) { @content };
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: 650px) { @content };
+    }
+
+    @if $breakpoint == phone-s {
+        @media (max-width: 480px) { @content };
+    }
+
+
+    @if $breakpoint == phone-x-s {
+        @media (max-width: 368px) { @content };
+    }
+}
+
+
+@include respond(tablet-landscape) {
+
+}
+@include respond(tablet-portrait) {
+
+}
+@include respond(phone) {
+
+}

@@ -22,7 +22,7 @@ export default {
     /*
     ** Customize the progress-bar color
     */
-    loading: {color: '#13111c'},
+    loading: {color: '#521645'},
     /*
     ** Global CSS
     */
@@ -37,18 +37,17 @@ export default {
     ** Nuxt.js dev-modules
     */
     buildModules: [
-        '@nuxtjs/vuetify',
     ],
-    vuetify: {
-        /* module options */
-    },
+
     /*
     ** Nuxt.js modules
     */
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
+        'nuxtjs-mdi-font'
     ],
+
     /*
     ** Axios module configuration
     ** See https://axios.nuxtjs.org/options
@@ -65,11 +64,6 @@ export default {
         }
     },
     router: {
-        scrollBehavior(to) {
-            if (to.hash) {
-                return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' });
-            }
-            return window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+
     }
 }

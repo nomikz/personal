@@ -18,7 +18,45 @@ body {
 
 
 html {
-    //font-size: 10px; todo
+    font-size: 10px;
+}
+
+* {
+    outline: none;
+}
+
+.main {
+    //width: 100%;
+    max-width: 1600px;
+    padding: 0 150px;
+    margin: 0 auto;
+
+    @include respond(tablet-landscape) {
+
+        padding: 0 100px;
+    }
+
+    @include respond(tablet-portrait) {
+
+        padding: 0 75px;
+
+    }
+
+    @include respond(phone) {
+
+        padding: 0 40px;
+
+    }
+
+
+    @include respond(phone-s) {
+
+        padding: 0 25px;
+
+    }
+    @include respond(phone-x-s) {
+
+    }
 }
 
 

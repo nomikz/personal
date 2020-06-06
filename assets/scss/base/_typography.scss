@@ -1,7 +1,13 @@
 @font-face {
     font-family: "SF Mono";
-    src:
-        url(~assets/fonts/sf-mono/SFMonoMedium.otf) format("opentype"),
+    src: url(~assets/fonts/sf-mono/SFMonoMedium.otf) format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "SF Mono";
+    src: url(~assets/fonts/sf-mono/SFMonoLight.otf) format("opentype");
+    font-weight: 400;
 }
 
 
@@ -9,10 +15,13 @@
 //body styles
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
-    font-size: 18px;
+    line-height: 1.6;
+    font-size: 16px;
     color: $dark-font-color;
+
 }
+
+
 
 
 
@@ -26,6 +35,22 @@ body {
     margin-top: 10px;
     margin-bottom: 45px;
 
+    @include respond(tablet-landscape) {
+    }
+    @include respond(tablet-portrait) {
+        font-size: 26px;
+    }
+    @include respond(phone) {
+
+    }
+    @include respond(phone-s) {
+        font-size: 24px;
+
+    }
+    @include respond(phone-x-s) {
+        font-size: 19px;
+    }
+
 
     &::after {
         content: '';
@@ -36,6 +61,16 @@ body {
         width: 300px;
         position: relative;
         bottom: -1px;
+        @include respond(tablet-landscape) {
+
+        }
+        @include respond(tablet-portrait) {
+            flex: 1;
+            transform: scale(1.07) translateX(7%);
+        }
+        @include respond(phone) {
+
+        }
     }
 
     &::before {
@@ -45,7 +80,7 @@ body {
         font-size: 20px;
         position: relative;
         bottom: -1px;
-
+        font-weight: 400;
     }
 
     &--about:before {

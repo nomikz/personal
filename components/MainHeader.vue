@@ -106,7 +106,7 @@
                 return this.isAnimating ? classesArr[arrIndex()] : '';
             },
             isHeaderDecreased() {
-                return this.scrollPosition > 90
+                return this.scrollPosition > 40
             }
         }
     }

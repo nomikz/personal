@@ -1,18 +1,22 @@
 <template>
     <div id="app">
 
-        <main-header></main-header>
-        <nuxt/>
-        <main-footer></main-footer>
+        <main-header />
 
-        <!--todo floater for social links-->
-        <!--todo floater for quick contact-->
+        <nuxt/>
+
+        <main-footer />
+
+        <social-links />
+        <telegram-link />
     </div>
 </template>
 
 <script>
 import MainHeader from '~/components/MainHeader';
 import MainFooter from '~/components/MainFooter';
+import SocialLinks from '~/components/SocialLinks';
+import TelegramLink from '~/components/TelegramLink';
 
 export default {
     head() {
@@ -30,6 +34,8 @@ export default {
     components: {
         MainHeader,
         MainFooter,
+        SocialLinks,
+        TelegramLink,
     }
 }
 </script>

@@ -1,15 +1,11 @@
-$dark-background-color: #131217;
-$dark-secondary-background-color: #232129;
-$dark-font-color: rgba(217, 215, 224, 0.87);
-//$dark-primary-color: rgba(177, 122, 204, 0.61);
-$dark-primary-color: #9a6ab3;
-
 
 
 //@import 'elements/body';
 //@import 'components/util';
+@import "abstracts/variables";
 
-@import 'animations.scss';
+@import "abstracts/mixins";
+
 
 @import "base/animations"; // animations.scss to animations
 @import "base/typography";
@@ -22,6 +18,7 @@ $dark-primary-color: #9a6ab3;
 
 @import "components/button";
 @import "components/portfolio-item";
+@import "components/tabs";
 
 @import "pages/resume";
 
@@ -52,33 +49,7 @@ $dark-primary-color: #9a6ab3;
 
 
 
-@media only screen and (min-width: 1200px) {
 
-}
-
-
-
-@media only screen and (min-width: 992px) {
-
-}
-
-
-
-
-
-@media only screen and (min-width: 768px) {
-
-}
-
-
-@media only screen and (min-width: 640px) {
-
-}
-
-
-
-@media only screen and (max-width: 640px) {
-}
 
 
 

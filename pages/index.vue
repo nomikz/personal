@@ -56,26 +56,31 @@
 
                         <div class="about-section__ul-box">
 
-                            <ul>
-                                <li>
+                            <ul class="">
+                                <li class="about-section__ul-li">
                                     php
                                 </li>
-                                <li>
+                                <li class="about-section__ul-li">
+
                                     php
                                 </li>
-                                <li>
+                                <li class="about-section__ul-li">
+
                                     php
                                 </li>
                             </ul>
 
                             <ul>
-                                <li>
+                                <li class="about-section__ul-li">
+
                                     php
                                 </li>
-                                <li>
+                                <li class="about-section__ul-li">
+
                                     php
                                 </li>
-                                <li>
+                                <li class="about-section__ul-li">
+
                                     php
                                 </li>
 
@@ -112,16 +117,14 @@
                 <div class="portfolio-item">
 
                     <div class="portfolio-item__image-box">
-                        <div class="wip-image-wrapper">
-                            <a
-                                href="#"
+                        <a
+                            href="#"
+                        >
+                            <img
+                                class="portfolio-item__image"
+                                src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
                             >
-                                <img
-                                    class="portfolio-item__image"
-                                    src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
-                                >
-                            </a>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="portfolio-item__info-box">
@@ -217,13 +220,15 @@ import MainHeader from '~/components/MainHeader';
 
 export default {
     created() {
-        setTimeout(() => {
-            this.preloading = false;
-        }, 1000)
+        setInterval(() => {
+            if(process.client) {
+                console.log('dont run in server');
+            }
+        },500)
     },
     data() {
         return {
-            preloading: true,
+            //
         }
     },
     components: {

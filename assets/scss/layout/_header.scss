@@ -15,12 +15,17 @@
     align-items: center;
 
 
+    @include respond(phone) {
+        display: none;
+    }
+
     &__logo-box {
         height: 53px;
         width: 53px;
         position: relative;
         display: flex;
         flex-direction: column;
+        transform: rotate(15deg);
     }
 
 
