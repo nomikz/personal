@@ -1,10 +1,7 @@
 <template>
     <div>
-
-        <main class="main">
-
+        <main class="about-page">
             <section class="intro-section">
-
                 <p class="intro-section__hello">
                     Hi, there! Меня зовут
                 </p>
@@ -28,12 +25,9 @@
                         Написать телеграм
                     </button>
                 </a>
-
             </section>
 
-
             <section id="about" class="about-section">
-
                 <h2 class="section-heading section-heading--about">
                     Если подробнее
                 </h2>
@@ -97,18 +91,6 @@
                     </div>
                 </div>
             </section>
-
-
-            <section id="experience" class="experience-section">
-
-                <h2 class="section-heading section-heading--experience">
-                    Стек
-                </h2>
-
-                <vertical-tabs></vertical-tabs>
-
-            </section>
-
 
             <section id="portfolio" class="portfolio-section">
 
@@ -199,8 +181,6 @@
                 </div>
             </section>
 
-
-
             <section id="contact" class="contact-section">
                 <h2 class="section-heading section-heading--contact">
                     Обращайся
@@ -214,16 +194,23 @@
                 </button>
             </section>
         </main>
-    </div>
 
+        <social-links />
+
+        <telegram-link />
+    </div>
 </template>
 
 <script>
-import VerticalTabs from '~/components/VerticalTabs';
-import MainHeader from '~/components/MainHeader';
+import SocialLinks from '~/components/SocialLinks';
+import TelegramLink from '~/components/TelegramLink';
+
 
 export default {
     created() {
+        this.$axios.get('http://localhost:8000/api/data').then(({data}) => {
+            console.log(data);
+        });
     },
     data() {
         return {
@@ -231,13 +218,13 @@ export default {
         }
     },
     components: {
-        VerticalTabs,
-        MainHeader
+        SocialLinks,
+        TelegramLink,
     },
     name: 'list',
     head() {
         return {
-            title: "nomikz",
+            title: "About me",
             meta: [
                 {
                     hid: 'description',

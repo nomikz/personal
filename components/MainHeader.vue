@@ -6,11 +6,15 @@
     >
 
         <div class="header__logo-box" @mouseenter="animateLogo">
-            <img
-                :class="animationClass"
-                class="header__logo"
-                src="~assets/images/logo.png"
+            <nuxt-link
+                to="/"
             >
+                <img
+                    :class="animationClass"
+                    class="header__logo"
+                    src="~assets/images/logo.png"
+                >
+            </nuxt-link>
         </div>
 
         <nav class="header__nav">
@@ -22,20 +26,34 @@
                     ></span>
                     <nuxt-link
                         class="header__link"
-                        :to="link.href"
+                        :to="link.to"
                         v-text="link.text"
                     ></nuxt-link>
                 </li>
 
-                <li>
-                    <nuxt-link
-                        tag="button"
-                        class="header__cta primary-button"
-                        to="#"
-                    >
-                        Resume
-                    </nuxt-link>
-                </li>
+                <template v-if="$auth.loggedIn">
+                    <li>
+                        <nuxt-link
+                            tag="button"
+                            class="header__cta primary-button"
+                            to="/"
+                        >
+                            {{$auth.user.name}}
+                        </nuxt-link>
+                    </li>
+                </template>
+                <template v-else>
+                    <li>
+                        <nuxt-link
+                            tag="button"
+                            class="header__cta primary-button"
+                            to="/login"
+                        >
+                            Login
+                        </nuxt-link>
+                    </li>
+                </template>
+
                 <li>
                     <div class="switcher">
 
@@ -44,8 +62,6 @@
                             class="switcher__item mdi"
                             :class="switcherClass"
                         ></div>
-
-
                     </div>
                 </li>
 
@@ -67,7 +83,6 @@
         mounted () {
             window.addEventListener('scroll', this.onScroll);
 
-
             setInterval(() => {
                 this.animateLogo();
             }, 6000);
@@ -77,27 +92,18 @@
         },
         data() {
             return {
-                lightThemeClassString: 'switcher__item--light mdi-white-balance-sunny',
-                darkThemeClassString: 'switcher__item--dark mdi-weather-night',
+                lightThemeClassString: 'switcher__item--light mdi-weather-night',
+                darkThemeClassString: 'switcher__item--dark mdi-white-balance-sunny',
                 menuLinks: [
                     {
-                        href: '',
-                        text: 'About',
+                        to: '/',
+                        text: 'Форум',
                     },
                     {
-                        href: '',
-                        text: 'Experience',
-                    },
-                    {
-                        href: '',
-                        text: 'Work',
-                    },
-                    {
-                        href: '',
-                        text: 'Contact',
+                        to: '/about',
+                        text: 'Про меня',
                     },
                 ],
-
                 scrollPosition: 0,
                 isAnimating: false,
             }
@@ -149,10 +155,5 @@
         border-bottom: 1px solid #f0f0f2;
         box-shadow: rgba(0, 0, 0, 0.14) 0px 10px 30px -10px;
     }
-
-
-    //.scrolling-down {
-    //    transform: translateY(-150px);
-    //}
 
 </style>

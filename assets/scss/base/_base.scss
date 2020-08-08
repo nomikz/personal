@@ -1,77 +1,36 @@
 
-// css reset
+// css reset --- START
 * {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
+
 body {
     box-sizing: border-box;
 }
+// css reset --- END
 
-
-
-
-// under theme control
-
-//body {
-//
-//
-//    @include themify($themes) {
-//        background-color: themed('backgroundColor');
-//    }
-//}
 
 
 html {
     font-size: 10px;
 }
 
+
+
 * {
     outline: none;
 }
 
-.main {
-    //width: 100%;
-    max-width: 1600px;
-    padding: 0 150px;
-    margin: 0 auto;
-
-    @include respond(tablet-landscape) {
-
-        padding: 0 100px;
-    }
-
-    @include respond(tablet-portrait) {
-
-        padding: 0 75px;
-
-    }
-
-    @include respond(phone) {
-
-        padding: 0 40px;
-
-    }
 
 
-    @include respond(phone-s) {
-
-        padding: 0 25px;
-
-    }
-    @include respond(phone-x-s) {
-
-    }
-}
-
-
-// ul defaults taken out
 ul {
     list-style: none;
 }
 
-// utility link coloring
+
+
 a {
     text-decoration: none;
     @include themify($themes) {
@@ -80,3 +39,12 @@ a {
 }
 
 
+
+// font color && background-color --- START
+.wrapper {
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('backgroundColor');
+    }
+}
+// END

@@ -1,18 +1,14 @@
 <template>
     <div id="app" :class="getThemeClass">
         <div class="wrapper">
-
             <main-header
-                @themeSwitched="isLightMode = !isLightMode"
+                @themeSwitched="switchTheme"
                 :isLightMode="isLightMode"
             ></main-header>
 
             <nuxt/>
 
             <main-footer />
-
-            <social-links />
-            <telegram-link />
         </div>
     </div>
 </template>
@@ -20,14 +16,8 @@
 <script>
 import MainHeader from '~/components/MainHeader';
 import MainFooter from '~/components/MainFooter';
-import SocialLinks from '~/components/SocialLinks';
-import TelegramLink from '~/components/TelegramLink';
 
 export default {
-    mounted() {
-    },
-    methods: {
-    },
     computed: {
         getThemeClass() {
             return this.isLightMode ? 'theme-light' : 'theme-dark';
@@ -35,12 +25,17 @@ export default {
     },
     data() {
         return {
-            isLightMode: false,
+            isLightMode: true,
+        }
+    },
+    methods: {
+        switchTheme() {
+            this.isLightMode = !this.isLightMode;
         }
     },
     head() {
         return {
-            titleTemplate: "%s - Blog",
+            titleTemplate: "%s - nomi.kz",
             meta: [
                 {
                     hid: 'description',
@@ -53,8 +48,6 @@ export default {
     components: {
         MainHeader,
         MainFooter,
-        SocialLinks,
-        TelegramLink,
     }
 }
 </script>

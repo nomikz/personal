@@ -1,3 +1,4 @@
+// SF Mono imports
 @font-face {
     font-family: "SF Mono";
     src: url(~assets/fonts/sf-mono/SFMonoMedium.otf) format("opentype");
@@ -11,34 +12,17 @@
 }
 
 
-
-
-
-//body styles
+// body
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     font-size: 16px;
     font-weight: 300;
-
-
-
-}
-
-.wrapper { //todo
-    // under theme control
-    @include themify($themes) {
-        color: themed('textColor');
-        background-color: themed('backgroundColor');
-    }
 }
 
 
 
-
-
-
-//heading in section
+//heading in sections
 .section-heading {
     display: flex;
     align-items: center;
@@ -47,23 +31,27 @@ body {
     margin-top: 10px;
     margin-bottom: 45px;
 
+
     @include respond(tablet-landscape) {
     }
+
     @include respond(tablet-portrait) {
         font-size: 26px;
     }
-    @include respond(phone) {
 
+    @include respond(phone) {
     }
+
     @include respond(phone-s) {
         font-size: 24px;
-
     }
+
     @include respond(phone-x-s) {
         font-size: 19px;
     }
 
 
+    // line after heading
     &::after {
         content: '';
         margin-left: 20px;
@@ -73,18 +61,22 @@ body {
         width: 300px;
         position: relative;
         bottom: -1px;
-        @include respond(tablet-landscape) {
 
+
+        @include respond(tablet-landscape) {
         }
+
         @include respond(tablet-portrait) {
             flex: 1;
             transform: scale(1.07) translateX(7%);
         }
-        @include respond(phone) {
 
+        @include respond(phone) {
         }
     }
 
+
+    // counter before heading
     &::before {
         font-family: SF Mono, monospace;
         color: $dark-primary-color;
@@ -103,13 +95,8 @@ body {
         content: '01.';
     }
 
-    &--experience:before {
-        content: '02.';
-
-    }
-
     &--portfolio:before {
-        content: '03.';
+        content: '02.';
     }
 }
 

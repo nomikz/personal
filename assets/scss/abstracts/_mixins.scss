@@ -8,13 +8,7 @@
 
 
 
-//@mixin respond-phone {
-//    @media (max-width: 640px) { @content };
-//}
-
-
 /*
-
 base + typography -> general layout + grid -> page layout -> component
 
 phone
@@ -45,6 +39,10 @@ desktop // already
         @media (max-width: 368px) { @content };
     }
 }
+
+
+
+
 
 
 
@@ -84,6 +82,7 @@ $themes: (
 
             @content;
             $theme-map: null !global;
+            transition: all 0.25s;
         }
 
     }

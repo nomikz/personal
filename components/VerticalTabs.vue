@@ -1,3 +1,13 @@
+<!--<section id="experience" class="experience-section">-->
+
+<!--    <h2 class="section-heading section-heading&#45;&#45;experience">-->
+<!--        Стек-->
+<!--    </h2>-->
+
+<!--    <vertical-tabs></vertical-tabs>-->
+
+<!--</section>-->
+
 <template>
     <div class="tabs">
 
@@ -166,4 +176,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+    .experience-section {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 150px 0;
+
+        @include respond(tablet-portrait) {
+            padding: 100px 0;
+        }
+    }
 </style>

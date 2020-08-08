@@ -1,10 +1,21 @@
 <template>
+    <div class="error-page-wrapper">
 
-    <div>
-        error message: {{error.message}}
-        <div v-if="error.statusCode === 404">
-            return to home <nuxt-link to="/">Home</nuxt-link>
+        <div
+            class="error light-mode-shadow"
+        >
+            <h4 class="error__heading">Упс ... Страница не найдена</h4>
+            <p class="error__not-found">404</p>
+            <p class="error__text">Вернуться на
+                <nuxt-link to="/"
+                           class="underlined-link"
+                >
+                    Главную
+                </nuxt-link>
+            </p>
+
         </div>
+
     </div>
 </template>
 
@@ -34,3 +45,6 @@
         }
     }
 </script>
+<style scoped lang="scss">
+
+</style>
