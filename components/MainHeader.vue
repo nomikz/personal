@@ -31,28 +31,28 @@
                     ></nuxt-link>
                 </li>
 
-                <template v-if="$auth.loggedIn">
-                    <li>
-                        <nuxt-link
-                            tag="button"
-                            class="header__cta primary-button"
-                            to="/"
-                        >
-                            {{$auth.user.name}}
-                        </nuxt-link>
-                    </li>
-                </template>
-                <template v-else>
-                    <li>
-                        <nuxt-link
-                            tag="button"
-                            class="header__cta primary-button"
-                            to="/login"
-                        >
-                            Login
-                        </nuxt-link>
-                    </li>
-                </template>
+<!--                <template v-if="$auth.loggedIn">-->
+<!--                    <li>-->
+<!--                        <nuxt-link-->
+<!--                            tag="button"-->
+<!--                            class="header__cta primary-button"-->
+<!--                            to="/"-->
+<!--                        >-->
+<!--                            {{$auth.user.name}}-->
+<!--                        </nuxt-link>-->
+<!--                    </li>-->
+<!--                </template>-->
+<!--                <template v-else>-->
+<!--                    <li>-->
+<!--                        <nuxt-link-->
+<!--                            tag="button"-->
+<!--                            class="header__cta primary-button"-->
+<!--                            to="/login"-->
+<!--                        >-->
+<!--                            Login-->
+<!--                        </nuxt-link>-->
+<!--                    </li>-->
+<!--                </template>-->
 
                 <li>
                     <div class="switcher">
@@ -95,10 +95,6 @@
                 lightThemeClassString: 'switcher__item--light mdi-weather-night',
                 darkThemeClassString: 'switcher__item--dark mdi-white-balance-sunny',
                 menuLinks: [
-                    {
-                        to: '/',
-                        text: 'Форум',
-                    },
                     {
                         to: '/about',
                         text: 'Про меня',
