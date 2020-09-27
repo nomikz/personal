@@ -99,13 +99,11 @@
         }
         @include respond(phone) {
             font-size: 4rem;
-            line-height: 1.8;
+            line-height: 1.3;
 
         }
         @include respond(phone-s) {
-
             font-size: 3.3rem;
-
         }
         @include respond(phone-x-s) {
             font-size: 3rem;
@@ -126,11 +124,12 @@
         }
         @include respond(phone) {
             font-size: 4rem;
-
+            line-height: 1.3;
         }
         @include respond(phone-s) {
 
             font-size: 3.3rem;
+
 
         }
         @include respond(phone-x-s) {
@@ -142,7 +141,7 @@
 
     &__info {
         margin-top: 35px;
-        width: 500px;
+        width: 650px;
         font-size: 2rem;
 
 
@@ -211,7 +210,11 @@
         display: flex;
 
         & > * {
-            width: 30%;
+            width: 50%;
+
+            & > *:not(:last-child) {
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -262,7 +265,7 @@
     }
 
     &__text-box {
-        flex: 0 7 480px;
+        flex: 0 7 560px;
         @include respond(phone) {
             flex: 0 1;
             margin-bottom: 40px;
@@ -405,7 +408,7 @@
         &__image {
             position: absolute;
             height: 360px;
-            width: 110%;
+            width: 125%;
             min-width: 350px;
             background-size: cover;
             background-position: center;

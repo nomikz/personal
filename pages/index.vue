@@ -3,7 +3,7 @@
         <main class="about-page">
             <section class="intro-section">
                 <p class="intro-section__hello">
-                    Hi, there! Меня зовут
+                    Hi, there 👋  Меня зовут
                 </p>
 
                 <h1 class="intro-section__name">
@@ -11,11 +11,15 @@
                 </h1>
 
                 <p class="intro-section__specialization">
-                    Я фулл стек разработчик.
+                    Я бекенд разработчик.
                 </p>
 
                 <p class="intro-section__info">
-                    Я работаю полное время в компании. В остальное время, я обучаюсь новым вещам. Мой стек php, postgre, laravel, js, vue, nuxt. До разработки, я занимался SEO.
+                    - Мне 23. Живу в Алматы. Работаю в <a class="underlined-link" href="https://onay.kz/">Онай</a>.
+                    <br style="margin-bottom: 10px;">
+                    - Мой стек: php, sql, js. Из фреймоврков laravel, vue&nuxt.
+                    <br style="margin-bottom: 10px;">
+                    - Eat, Sleep and Breathe code. Don't code without coffee <span class="emoji">☕️</span>.
                 </p>
 
 
@@ -37,48 +41,41 @@
                     <div class="about-section__text-box">
 
                         <p>
-                            Я живу в алматы.
-                        </p>
-                        <p>
-                            До 9 класса, был в Актобе. Потом после 11 как то жил в Астане. Потом приехал обратно в Алматы для учебы в универе.
+                            В Казахстане, я бы не смог жить нигде кроме как в Алматы. Благоприятный климат. Горы. И главное кипящая жинь 🥃 🌮 ⛸️.
                         </p>
 
                         <p>
-                            Учился в АУЭС. Специальность: Приборостроение. Университетские годы прошли интересно: прочитал много книг, работал репетитором по английскому языку.
+                            Однако, в идеале жить где-то в Лондоне, Мюнхене, Нью-йорке. Сейчас, я не представляю это возможнным.
                         </p>
 
                         <p>
-                            На 4 ом курсе, я сильно заинтересовался интернет маркетингом. Примерно в это время, я познакомился с программированием. В первое время занимался wordpress разработкой и seo.
+                            Сейчас работаю бекенд разработчиком в Онай. Основной стек laravel, phalcon. Однако, сейчас часто приглядываюсь к golang.
                         </p>
 
                         <p>
-                            Но только в августе 2019-го, я устроился в свою первую серьезную компанию Tarlan Payments. Там был такой стек:
+                            Вещй без которых не выхожу из дома:
                         </p>
 
                         <div class="about-section__ul-box">
 
                             <ul class="">
                                 <li class="about-section__ul-li">
-                                    php
+                                    Рюкзак: Samsonite.
                                 </li>
                                 <li class="about-section__ul-li">
-
-                                    laravel
+                                    Ноутбук: Macbook pro 15.
                                 </li>
                                 <li class="about-section__ul-li">
-                                    postgre
+                                    Наушники: Marshall major 2.
                                 </li>
                             </ul>
 
                             <ul>
                                 <li class="about-section__ul-li">
-                                    js
+                                    Телефон: Samsung 7 edge.
                                 </li>
                                 <li class="about-section__ul-li">
-                                    vue
-                                </li>
-                                <li class="about-section__ul-li">
-                                    scss
+                                    Контейнеры с едой. 🍳🍳
                                 </li>
 
                             </ul>
@@ -107,7 +104,7 @@
                         >
                             <img
                                 class="portfolio-item__image"
-                                src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
+                                src="~assets/images/custom-cms.gif" alt=""
                             >
                         </a>
                     </div>
@@ -118,21 +115,20 @@
                             Featured project
                         </p>
                         <a
-                            href="#"
+                            href="https://github.com/nomikz/custom-cms"
                             class="portfolio-item__link"
                         >
-                            OctoProfile
+                            Custom CMS
                         </a>
                         <div class="portfolio-item__description light-mode-shadow">
                             <p>
-                                A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.
+                                CMS который я сделал когда работал в Mars Studio для клиентов с Новой Зеландии. Сделал API для основного сайта и для приложении Android Ios. Админка SPA на vue&vuetify. Ссылка на <a class="underlined-link" href="https://github.com/nomikz/custom-cms">git</a>. Можете стянуть потыкать.
                             </p>
                         </div>
 
                         <ul class="portfolio-item__list inline-ul">
                             <li>Laravel</li>
-                            <li>Vue</li>
-                            <li>Vuex</li>
+                            <li>Vue, Vuetify</li>
                             <li>RestAPI</li>
                         </ul>
                     </div>
@@ -144,11 +140,11 @@
                     <div class="portfolio-item__image-box">
                         <div class="wip-image-wrapper">
                             <a
-                                href="#"
+                                href="https://github.com/nomikz/custom-cms"
                             >
                                 <img
                                     class="portfolio-item__image"
-                                    src="https://www.wpexplorer.com/wp-content/uploads/wordpress-image-optimization-guide.jpg" alt=""
+                                    src="~assets/images/ekonomist.gif" alt=""
                                 >
                             </a>
                         </div>
@@ -160,22 +156,20 @@
                             Featured project
                         </p>
                         <a
-                            href="#"
+                            href="https://ekonomist.kz/"
                             class="portfolio-item__link"
                         >
-                            OctoProfile
+                            Ekonomist.kz
                         </a>
                         <div class="portfolio-item__description light-mode-shadow">
                             <p>
-                                A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.
+                                Ekonomist.kz онлайн-площадка для профессиональных дискуссий на экономические темы в Казахстане. Этот проект еще сделал во время универа. Для паблишинга решил сделать на грязно и быстро wordpress-е. В команде много редакторов и функционал вордпресса вплоне подходил.
                             </p>
                         </div>
 
                         <ul class="portfolio-item__list inline-ul">
-                            <li>Laravel</li>
-                            <li>Vue</li>
-                            <li>Vuex</li>
-                            <li>RestAPI</li>
+                            <li>Wordpress</li>
+                            <li>SEO consulting</li>
                         </ul>
                     </div>
                 </div>
@@ -186,7 +180,7 @@
                     Обращайся
                 </h2>
                 <p class="contact-section__text">
-                    В скором времени, начну на сайте вести блог. Есть некоторые темы которые я давно хотел опубликовать. Но хотел это сделать на своем сайте.
+                    Если есть интересные проекты, можете меня тянуть. Я больше доступен в телеграм.
                 </p>
                 <button class="primary-button">
                     <span class="mdi mdi-telegram icon"></span>

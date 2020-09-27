@@ -27,7 +27,7 @@
                     <nuxt-link
                         class="header__link"
                         :to="link.to"
-                        v-text="link.text"
+                        v-html="link.text"
                     ></nuxt-link>
                 </li>
 
@@ -97,7 +97,7 @@
                 menuLinks: [
                     {
                         to: '/about',
-                        text: 'Про меня',
+                        text: 'Про меня <span class="emoji">💂</span>',
                     },
                 ],
                 scrollPosition: 0,
