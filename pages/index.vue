@@ -100,7 +100,7 @@
 
                     <div class="portfolio-item__image-box">
                         <a
-                            href="#"
+                            href="http://admin.karatenz.co.nz/login"
                         >
                             <img
                                 class="portfolio-item__image"
@@ -140,7 +140,7 @@
                     <div class="portfolio-item__image-box">
                         <div class="wip-image-wrapper">
                             <a
-                                href="https://github.com/nomikz/custom-cms"
+                                href="https://ekonomist.kz/"
                             >
                                 <img
                                     class="portfolio-item__image"
@@ -163,7 +163,7 @@
                         </a>
                         <div class="portfolio-item__description light-mode-shadow">
                             <p>
-                                Ekonomist.kz онлайн-площадка для профессиональных дискуссий на экономические темы в Казахстане. Этот проект еще сделал во время универа. Для паблишинга решил сделать на грязно и быстро wordpress-е. В команде много редакторов и функционал вордпресса вплоне подходил.
+                                <a href="https://ekonomist.kz/">Ekonomist.kz</a> онлайн-площадка для профессиональных дискуссий на экономические темы в Казахстане. Этот проект еще сделал во время универа. Для паблишинга решил сделать на грязно и быстро wordpress-е. В команде много редакторов и функционал вордпресса вплоне подходил.
                             </p>
                         </div>
 
